@@ -1,0 +1,56 @@
+# Flash Partitions
+/boot                        emmc      /dev/block/by-name/boot              flags=display=boot;backup=1;flashimg=1
+/recovery                    emmc      /dev/block/by-name/recovery          flags=display=recovery;backup=1;flashimg=1
+/dtbo                        emmc      /dev/block/by-name/dtbo              flags=display=dtbo;backup=1;flashimg=1
+/vbmeta                      emmc      /dev/block/by-name/vbmeta            flags=display=vbmeta;backup=1;flashimg=1
+/vbmeta_vendor               emmc      /dev/block/by-name/vbmeta_vendor     flags=display=vbmeta;backup=1;flashimg=1
+/vbmeta_system               emmc      /dev/block/by-name/vbmeta_system     flags=display=vbmeta;backup=1;flashimg=1
+
+#Main Partitions
+/system         ext4        /dev/block/mapper/system        flags=display="system";backup=1;flashimg=1
+/system_ext     ext4        /dev/block/mapper/system_ext     flags=display="system_ext";backup=1;flashimg=1
+/vendor         ext4        /dev/block/mapper/vendor         flags=display="vendor";backup=1;flashimg=1
+/product        ext4        /dev/block/mapper/product        flags=display=boot;backup=1;flashimg=1
+
+# Misc Partitions
+/cache                       ext4      /dev/block/by-name/cache             flags=display=cache
+/protect_f                   ext4      /dev/block/by-name/protect1          flags=display=protect_f
+/protect_s                   ext4      /dev/block/by-name/protect2          flags=display=protect_s
+/nvdata                      ext4      /dev/block/by-name/nvdata            flags=display=nvdata
+/nvcfg                       ext4      /dev/block/by-name/nvcfg             flags=display=nvcfg
+/nvram                       emmc      /dev/block/by-name/nvram             flags=display=nvram;backup=1
+/persist                     ext4      /dev/block/by-name/persist           flags=display=persist;backup=1
+/persistent                  emmc      /dev/block/by-name/frp               flags=display=persistent
+
+# Standard MediaTek Mounts       
+/otp                        emmc        /dev/block/by-name/otp           
+/proinfo                    emmc        /dev/block/by-name/proinfo
+/bootloader                 emmc        /dev/block/by-name/lk
+/bootloader2                emmc        /dev/block/by-name/lk2
+/para                       emmc        /dev/block/by-name/para
+/logo                       emmc        /dev/block/by-name/logo             flags=display=logo;flashimg=1
+/expdb                      emmc        /dev/block/by-name/expdb
+/seccfg                     emmc        /dev/block/by-name/seccfg
+/tee1                       emmc        /dev/block/by-name/tee1
+/tee2                       emmc        /dev/block/by-name/tee2
+/scp1                       emmc        /dev/block/by-name/scp1
+/scp2                       emmc        /dev/block/by-name/scp2
+/sspm_1                     emmc        /dev/block/by-name/sspm_1
+/sspm_2                     emmc        /dev/block/by-name/sspm_2
+/mcupm_1                    emmc        /dev/block/by-name/mcupm_1
+/mcupm_2                    emmc        /dev/block/by-name/mcupm_2
+/md1img                     emmc        /dev/block/by-name/md1img
+/md1dsp                     emmc        /dev/block/by-name/md1dsp
+/md1arm7                    emmc        /dev/block/by-name/md1arm7
+/md3img                     emmc        /dev/block/by-name/md3img
+/cam_vpu1                   emmc        /dev/block/by-name/cam_vpu1
+/cam_vpu2                   emmc        /dev/block/by-name/cam_vpu2
+/cam_vpu3                   emmc        /dev/block/by-name/cam_vpu3
+/gz1                        emmc        /dev/block/by-name/gz1
+/gz2                        emmc        /dev/block/by-name/gz2
+/spmfw                      emmc        /dev/block/by-name/spmfw
+/boot_para                  emmc        /dev/block/by-name/boot_para
+
+# External Partitions
+/external_sd              auto     /dev/block/mmcblk0p1         /dev/block/mmcblk0   flags=display="Micro SD Card";storage;wipeingui;removable
+/usb_otg                  auto     /dev/block/sda1              /dev/block/sda       flags=display="USB OTG";storage;wipeingui;removable
