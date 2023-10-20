@@ -8,6 +8,7 @@
         device_framework_matrix_silead.xml
         device_framework_matrix_fpc.xml
         device_framework_matrix_focaltech.xml
+        device_framework_matrix_trancamserver.xml
         device_framework_matrix_tranlog.xml
         device_framework_matrix_tranlogconfig.xml
         device_framework_matrix_tneengine.xml
@@ -113,14 +114,6 @@
         <version>1.0</version>
         <interface>
             <name>INeuronApusys</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.mediatek.hardware.apuware.hmp</name>
-        <version>1.0</version>
-        <interface>
-            <name>IApuwareHmp</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -253,14 +246,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.mediatek.hardware.hdcpconnection</name>
-        <version>1.0</version>
-        <interface>
-            <name>IHDCPConnection</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.hdmi</name>
         <version>1.0</version>
         <interface>
@@ -364,14 +349,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.mediatek.hardware.mmagent</name>
-        <version>1.0</version>
-        <interface>
-            <name>IMMAgent</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.mms</name>
         <version>1.5</version>
         <interface>
@@ -409,7 +386,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.mtkradioex</name>
-        <version>2.5</version>
+        <version>2.2</version>
         <interface>
             <name>IMtkRadioEx</name>
             <instance>imsSlot1</instance>
@@ -423,7 +400,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.mtkradioex</name>
-        <version>2.5</version>
+        <version>2.2</version>
         <interface>
             <name>IMtkRadioEx</name>
             <instance>imsSlot1</instance>
@@ -633,6 +610,14 @@
         <version>1.0</version>
         <interface>
             <name>ITne</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.transsion.hardware.trancam.trancamserver</name>
+        <version>1.0</version>
+        <interface>
+            <name>ITrancamserver</name>
             <instance>default</instance>
         </interface>
     </hal>

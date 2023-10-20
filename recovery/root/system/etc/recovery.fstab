@@ -1,14 +1,10 @@
-# Initial fstab file, need more improvement
+#<src>                                                  <mnt_point>           <type>              <mnt_flags and options>                      <fs_mgr_flags
+system                                     		/system                ext4                ro wait,slotselect,logical
+system_ext                                 		/system_ext            ext4                ro wait,slotselect,logical
+vendor                                     		/vendor                ext4                ro wait,slotselect,logical
+product                                    		/product               ext4                ro wait,slotselect,logical
 
-# Main Partitions
+/dev/block/platform/bootdevice/by-name/md_udc           /metadata	       ext4	          noatime,nosuid,nodev,discard                 wait,check,formattable,first_stage_mount
+/dev/block/platform/bootdevice/by-name/userdata         /data                  f2fs                noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,tran_gc wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
+/dev/block/platform/bootdevice/by-name/para             /misc                  emmc                defaults                                     defaults
 
-system          /system         ext4        ro      wait,logical,avb=vbmeta_system,first_stage_mount
-system_ext      /system_ext     ext4        ro      wait,logical,avb=vbmeta_system,first_stage_mount
-vendor          /vendor         ext4        ro      wait,logical,avb=vbmeta_system,first_stage_mount
-product         /product        ext4        ro      wait,logical,avb=vbmeta_system,first_stage_mount
-odm             /odm            ext4        ro      wait,logical,first_stage_mount
-
-# Other Partitions
-/dev/block/by-name/metadata     /metadata   ext4                noatime,nosuid,nodev,discard                                                                                     wait,check,formattable,first_stage_mount
-/dev/block/by-name/userdata     /data       f2fs                noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt       wait,check,formattable,quota,reservedsize=128m,latemount,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
-/dev/block/by-name/misc         /misc       emmc                defaults                                                                                                         defaults
