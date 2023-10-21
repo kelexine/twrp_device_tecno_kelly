@@ -153,7 +153,7 @@ TARGET_USES_MKE2FS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_MAX_BRIGHTNESS := 2047
+TW_MAX_BRIGHTNESS := 3047
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -170,7 +170,6 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_MTP := true
 TW_FRAMERATE := 60
 TW_PREPARE_DATA_MEDIA_EARLY := true
-TW_INCLUDE_FASTBOOTD := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
