@@ -57,7 +57,8 @@ PRODUCT_PACKAGES += \
 # Boot Control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-mtkimpl.recovery \
-    android.hardware.boot@1.1-mtkimpl
+    android.hardware.boot@1.1-mtkimpl \
+    bootctl
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl.mt6761
