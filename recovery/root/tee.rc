@@ -1,4 +1,3 @@
-#For TEE
 on init
     #create mountpoint for /mnt/vendor/persist partition
     mkdir /mnt/vendor/persist 0771 system system
