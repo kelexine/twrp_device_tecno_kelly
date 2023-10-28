@@ -28,7 +28,6 @@ TARGET_OTA_ASSERT_DEVICE := kelly
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := CY-KG5J-H6511-C
 TARGET_NO_BOOTLOADER := true
-TARGET_USES_UEFI := true
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6761
@@ -147,17 +146,17 @@ BOARD_USES_MTK_HARDWARE := true
 
 ## TWRP-Specific configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := kelexine @xda
+TW_DEVICE_VERSION := kelexine-@xda
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_MKE2FS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_MAX_BRIGHTNESS := 3047
+TW_MAX_BRIGHTNESS := 4047
 TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
+TW_H_OFFSET := -60
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXCLUDE_PYTHON := false
+TW_INCLUDE_PYTHON := true
 TW_EXCLUDE_NANO := false
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_TWRPAPP := true

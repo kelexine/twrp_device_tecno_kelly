@@ -1,4 +1,4 @@
-# Android device tree for TECNO SPARK 8C Kelly (TECNO-Kelly)
+# Android device tree for TECNO SPARK 8C KG5j (Kelly)
 
 ```
 #
@@ -12,7 +12,7 @@
 ```
 #
 
-# TWRP for Tecno Spark 8C Kelly
+# TWRP for Tecno Spark 8C (Kelly)
 
 # [Transsion Limited]
 ```
