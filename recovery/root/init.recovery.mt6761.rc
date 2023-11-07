@@ -36,7 +36,7 @@ service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
 
 service keystore_auth /system/bin/keystore_auth
     oneshot
-    user root
+    user system
     group root
     disabled
     seclabel u:r:recovery:s0
@@ -59,17 +59,10 @@ service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
     group root
     disabled
     seclabel u:r:recovery:s0
-
-service tee-1-1 /system/bin/vendor.trustonic.tee@1.1-service
-    class hal
-    user root
-    group root
-    seclabel u:r:recovery:s0
     
 on property:vendor.sys.listener.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
-    start tee-1-1
 
 on property:hwservicemanager.ready=true
     write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry ++ (FBE encrypted)"
@@ -77,25 +70,21 @@ on property:hwservicemanager.ready=true
     write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry -- (FBE encrypted)"
     start keymaster-4-0
     start gatekeeper-1-0
-    start tee-1-1
 
 on property:ro.crypto.state=unsupported
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
-    start tee-1-1
 
 on property:ro.crypto.state=unencrypted
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
-    start tee-1-1
 
 on property:twrp.decrypt.done=true
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
-    start tee-1-1
 
 on boot
     start boot-hal-1-1
