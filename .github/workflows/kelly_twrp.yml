@@ -86,10 +86,10 @@ jobs:
         _Note: Flash at your own risk. This build were still in the process of testing._
         ### Resources
         * [TWRP Manifest](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp/tree/twrp-11)
-        * [Device Tree](https://github.com/kelly/twrp_device_tecno_kelly/tree/twrp-11)
+        * [Device Tree](https://github.com/kelexine/twrp_device_tecno_kelly/tree/twrp-11)
         ### Trigger Event
         _This build were compiled by triggering branch twrp-11 of current tree, triggered by a push event._
-        * [Last Commit](https://github.com/kelly/twrp_device_tecno_kelly.git/commit/${{ env.COMMIT_ID }})
+        * [Last Commit](https://github.com/kelexine/twrp_device_tecno_kelly.git/commit/${{ env.COMMIT_ID }})
         " > changelog.txt
 
     - name: Upload to Release
