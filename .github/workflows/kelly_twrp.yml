@@ -3,7 +3,7 @@ name: TWRP
 on:
   push:
     branches:
-      - 'twrp-11'
+      - 'android-11'
     paths-ignore:
       - '**/README.md'
       - '**/vendorsetup.sh'
@@ -63,7 +63,7 @@ jobs:
     - name: Clone Device Tree
       run: |
         cd twrp
-        git clone https://github.com/kelexine/twrp_device_tecno_kelly.git -b twrp-11 ./device/tecno/kelly
+        git clone https://github.com/kelexine/twrp_device_tecno_kelly.git -b android-11 ./device/tecno/kelly
         cd device/tecno/kelly
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
@@ -86,9 +86,9 @@ jobs:
         _Note: Flash at your own risk. This build were still in the process of testing._
         ### Resources
         * [TWRP Manifest](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp/tree/twrp-11)
-        * [Device Tree](https://github.com/kelexine/twrp_device_tecno_kelly/tree/twrp-11)
+        * [Device Tree](https://github.com/kelexine/twrp_device_tecno_kelly/tree/android-11)
         ### Trigger Event
-        _This build were compiled by triggering branch twrp-11 of current tree, triggered by a push event._
+        _This build were compiled by triggering branch android-11 of current tree, triggered by a push event._
         * [Last Commit](https://github.com/kelexine/twrp_device_tecno_kelly.git/commit/${{ env.COMMIT_ID }})
         " > changelog.txt
 
