@@ -29,14 +29,14 @@ on fs
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
     user root
-    group root system
+    group root root
     disabled
     oneshot
     seclabel u:r:recovery:s0
 
 service keystore_auth /system/bin/keystore_auth
     oneshot
-    user system
+    user root
     group root
     disabled
     seclabel u:r:recovery:s0
@@ -70,7 +70,6 @@ on property:vendor.sys.listener.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
     start tee-1-1
-    start keymaster_attestation-1-1
 
 on property:hwservicemanager.ready=true
     write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry ++ (FBE encrypted)"
@@ -79,29 +78,25 @@ on property:hwservicemanager.ready=true
     start keymaster-4-0
     start gatekeeper-1-0
     start tee-1-1
-    start keymaster_attestation-1-1
 
 on property:ro.crypto.state=unsupported
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
     stop tee-1-1
-    stop keymaster_attestation-1-1
-
+    
 on property:ro.crypto.state=unencrypted
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
     stop tee-1-1
-    stop keymaster_attestation-1-1
-
+    
 on property:twrp.decrypt.done=true
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
     stop tee-1-1
-    stop keymaster_attestation-1-1
-
+    
 on boot
     start boot-hal-1-1
     start health-hal-2-1
