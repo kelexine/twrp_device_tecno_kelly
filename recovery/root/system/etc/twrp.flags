@@ -1,4 +1,3 @@
-t
 # Main Image Partitions
 /system_image  emmc    	/dev/block/bootdevice/by-name/system			flags=display="System (Image)";backup=1;flashimg=1;slotselect;
 /vendor_image  emmc    	/dev/block/bootdevice/by-name/vendor			flags=display="Vendor (Image)";backup=1;flashimg=1;slotselect;
