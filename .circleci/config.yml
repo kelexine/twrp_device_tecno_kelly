@@ -22,7 +22,6 @@ jobs:
             git config --global user.email "frankiekelechi@gmail.com"
             python3 ~/bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
             python3 ~/bin/repo sync
-            source build/envsetup.sh && source ~/.bashrc
       - run:
           name: Clone device tree
           command: |
@@ -32,6 +31,7 @@ jobs:
           name: Build TWRP
           command: |
             cd ~/android/twrp
+            source build/envsetup.sh
             lunch twrp_kelly-eng
             mka bootimage
       - run:
