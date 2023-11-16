@@ -1,0 +1,40 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: current
+    steps:
+      - checkout
+      - run:
+          name: Setup Environment
+          command: |
+            sudo apt update && sudo apt-get install -y build-essential ccache libncurses5 libssl-dev m4 unzip zip python-is-python3 python-is-python2 repo
+      - run:
+          name: Set up Twrp And Sync
+          command: |
+            mkdir -p ~/android/twrp && cd ~/android/twrp
+            repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs
+            repo sync
+            source build/envsetup.sh && source ~/.bashrc
+      - run:
+          name: Clone device tree
+          command: |
+            git clone https://github.com/kelexine/twrp_device_tecno_kelly -b android-11 device/tecno/kelly
+      - run:
+          name: Build TWRP
+          command: |
+            cd ~/android/twrp
+            lunch twrp_kelly-eng
+            mka bootimage
+      - run:
+          name: Upload artifact
+          command: |
+            cd ~/android/twrp
+            circleci artifacts upload --path out/dist/<DEVICE_CODENAME>/*.img
+
+workflows:
+  main:
+    jobs:
+      - build
+      
