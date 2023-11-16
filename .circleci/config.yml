@@ -20,7 +20,7 @@ jobs:
             sudo ln -sf ~/bin/repo /usr/bin/repo
             git config --global user.name "kelexine"
             git config --global user.email "frankiekelechi@gmail.com"
-        repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+            repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
             repo sync
             source build/envsetup.sh && source ~/.bashrc
       - run:
