@@ -34,14 +34,11 @@ jobs:
             source build/envsetup.sh
             lunch twrp_kelly-eng
             mka bootimage
-      - run:
-          name: Upload artifact
-          command: |
-            cd ~/android/twrp
-            circleci artifacts upload --path out/target/product/kelly/*.img
-
+      - store_artifacts:
+            path: |
+               ~/android/twrp/out/target/product/kelly/*.zip
+               ~/android/twrp/out/target/product/kelly/*.img
 workflows:
   main:
     jobs:
       - build
-      
