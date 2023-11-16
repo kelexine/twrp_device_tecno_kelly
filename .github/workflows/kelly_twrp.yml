@@ -1,7 +1,7 @@
 name: TWRP
 
 on:
-  push:
+  workflow_dispatch:
     branches:
       - 'android-11'
     paths-ignore:
