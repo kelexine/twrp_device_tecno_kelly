@@ -38,7 +38,7 @@ jobs:
           name: Upload artifact
           command: |
             cd ~/android/twrp
-            circleci artifacts upload --path out/target/product/kelly/*.img
+            circleci artifacts upload --path out/dist/<DEVICE_CODENAME>/*.img
 
 workflows:
   main:
