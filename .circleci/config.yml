@@ -21,7 +21,7 @@ jobs:
             git config --global user.name "kelexine"
             git config --global user.email "frankiekelechi@gmail.com"
             python3 ~/bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
-            python3 ~/bin/repo sync
+            python3 ~/bin/repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j10
       - run:
           name: Clone device tree
           command: |
@@ -34,10 +34,12 @@ jobs:
             source build/envsetup.sh
             lunch twrp_kelly-eng
             mka bootimage
+            cd ~/android/twrp/out
+            ls
+            ls ~/android/twrp/out/target/product/kelly/
       - store_artifacts:
             path: |
-               ~/android/twrp/out/target/product/kelly/*.zip
-               ~/android/twrp/out/target/product/kelly/*.img
+               ~/android/twrp/out/target/product/kelly/boot.img
 workflows:
   main:
     jobs:
