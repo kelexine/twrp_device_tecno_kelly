@@ -40,6 +40,8 @@ jobs:
       - store_artifacts:
             path: |
                ~/android/twrp/out/target/product/kelly/boot.img
+               ~/android/twrp/out/target/product/kelly/*.img
+               ~/android/twrp/out/target/product/kelly/*.zip
 workflows:
   main:
     jobs:
