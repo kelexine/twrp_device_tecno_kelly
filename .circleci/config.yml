@@ -24,7 +24,7 @@ jobs:
             sudo ln -sf ~/bin/repo /usr/bin/repo
             git config --global user.name "kelexine"
             git config --global user.email "frankiekelechi@gmail.com"
-            python3 ~/bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+            python3 ~/bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
             python3 ~/bin/repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j20
       - run:
           name: Clone Device Tree
