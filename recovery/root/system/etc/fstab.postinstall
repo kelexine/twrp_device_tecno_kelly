@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#
 # Copyright (C) 2018 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,32 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Try to mount system_other as a logical partition. If that fails, then
+# Tries to mount system_other as a logical partition. If that fails, then
 # mount as a physical partition.
 
-mount_system() {
-  local mnt_point=$1
-  local type=$2
-  local mnt_flags=$3
-  local fs_mgr_flags=$4
-
-  # Attempt to mount system_other as a logical partition
-  if ! mount -t $type -o $mnt_flags,logical /dev/block/bootdevice/by-name/system_other $mnt_point; then
-    # If that fails, mount as a physical partition
-    if ! mount -t $type -o $mnt_flags $mnt_point; then
-      echo "Failed to mount $mnt_point"
-      return 1
-    fi
-  fi
-
-  # Set the fs_mgr_flags
-  echo "fs_mgr_flags:$fs_mgr_flags" > $mnt_point/fs_mgr_flags.json
-
-  return 0
-}
-
-# Call the mount_system function
-if ! mount_system /postinstall ext4 "ro,nosuid,nodev,noexec" slotselect_other; then
-  echo "Failed to mount /postinstall"
-  exit 1
-fi
+#<src>                    <mnt_point>  <type> <mnt_flags and options> <fs_mgr_flags>
+system                    /postinstall ext4   ro,nosuid,nodev,noexec  slotselect_other,logical
+/dev/block/by-name/system /postinstall ext4   ro,nosuid,nodev,noexec  slotselect_other
