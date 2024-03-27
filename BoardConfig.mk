@@ -23,7 +23,7 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kelly,KG5j,TECNO-KG5j
+TARGET_OTA_ASSERT_DEVICE := kelly
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := CY-KG5J-H6511-C
@@ -150,14 +150,13 @@ BOARD_USES_MTK_HARDWARE := true
 
 ## TWRP-Specific configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := kelexine-@xda
+TW_DEVICE_VERSION := kelexine-unofficial
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_MKE2FS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_MAX_BRIGHTNESS := 4047
-TW_Y_OFFSET := 40
+TW_MAX_BRIGHTNESS := 2048
+TW_Y_OFFSET := 50
 TW_H_OFFSET := -50
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_NANO := false
