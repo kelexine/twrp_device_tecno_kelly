@@ -1,18 +1,11 @@
-# Property values for MT6761 platform
 ro.mediatek.platform=MT6761
 ro.hardware=mt6761
-
-# Trustonic TEE support
 ro.hardware.kmsetkey=trustonic
 ro.mtk_trustonic_tee_support=1
-
-# Encryption settings
-ro.crypto.volume.filenames_mode=AES-256-CTS
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.sys.usb.bicr=no
+ro.sys.usb.storage.type=mtp
 ro.crypto.metadata.enabled=true
 ro.crypto.support_metadata_encrypt=true
 ro.crypto.uses_fs_ioc_add_encryption_key=true
-
-# USB settings
-ro.sys.usb.bicr=false
-ro.sys.usb.storage.type=mtp
 ro.sys.usb.mtp.whql.enable=0
