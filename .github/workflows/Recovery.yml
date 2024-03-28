@@ -107,7 +107,7 @@ jobs:
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
-        swap-size-gb: 10
+        swap-size-gb: 12
 
     - name: Building recovery
       run: |
@@ -124,10 +124,10 @@ jobs:
         files: | 
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
-        name: TWRP Recovery for cubot ${{ github.event.inputs.DEVICE_NAME }} with run-id:${{ github.run_id }}
+        name: TWRP Recovery for Tecno Spark 8C KG5j "(${{ github.event.inputs.DEVICE_NAME }})" with run-id:${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: |
-          TWRP Recovery for Cubot P50
+          TWRP Recovery for Tecno Spark 8C KG5j
           Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
           Device: ${{ github.event.inputs.DEVICE_NAME }}
           Target: ${{ github.event.inputs.BUILD_TARGET }}.img
